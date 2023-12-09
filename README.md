@@ -1,1 +1,1 @@
-# yt_speed_ext
+# Youtube speed controller chrome extension
