@@ -28,9 +28,7 @@ function onDOMContentLoaded() {
             if (event.key === 'w') {
                 video.playbackRate = (video.playbackRate + 0.1) < 16 ? video.playbackRate + 0.1 : 16;
             } else if (event.key === 'q') {
-                if (video.playbackRate >= 0.1) {
-                    video.playbackRate = (video.playbackRate - 0.1) > 1 ? video.playbackRate - 0.1 : 1;
-                }
+                video.playbackRate = (video.playbackRate - 0.1) > 1 ? video.playbackRate - 0.1 : 1;
             } else if (event.key == 'p') {
                 video.playbackRate = (video.playbackRate + 0.5) < 16 ? video.playbackRate + 0.5 : 16;
 
