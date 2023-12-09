@@ -31,13 +31,11 @@ function onDOMContentLoaded() {
                 video.playbackRate = (video.playbackRate - 0.1) > 1 ? video.playbackRate - 0.1 : 1;
             } else if (event.key == 'p') {
                 video.playbackRate = (video.playbackRate + 0.5) < 16 ? video.playbackRate + 0.5 : 16;
-
             } else if (event.key == 'o') {
                 video.playbackRate = (video.playbackRate - 0.5) > 1 ? video.playbackRate - 0.5 : 1;
             }
         });
         setTimeout(insertPlaybackRate, 3000);
-
     } else {
         console.log('video not found');
     }
