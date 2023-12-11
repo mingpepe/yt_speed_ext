@@ -21,7 +21,7 @@ function insertPlaybackRate() {
     logo.appendChild(label);
 
     setInterval(() => {
-        label.textContent = video.playbackRate.toFixed(1);
+        label.textContent = video.playbackRate.toFixed(2);
     }, 1000);
 
     document.addEventListener('keydown', (event) => {
