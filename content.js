@@ -1,7 +1,7 @@
 console.log('code in content.js');
 
 function main(retryCnt) {
-    console.log('main');
+    console.log(`main, retry count: ${retryCnt}`);
     const logo = document.getElementById('logo-icon');
     const player = document.getElementById('movie_player');
     const video = document.querySelector('video');
@@ -14,8 +14,11 @@ function main(retryCnt) {
     if (!video) {
         console.log('video not found! Fail!');
     }
-    if (!logo || !player || !video && retryCnt > 0) {
-        setTimeout(main(retryCnt--), 1000);
+    if (!logo || !player || !video) {
+        if (retryCnt > 0) {
+            setTimeout(main(retryCnt--), 1000);
+        }
+        return;
     }
     const label = document.createElement('label');
     logo.appendChild(label);
