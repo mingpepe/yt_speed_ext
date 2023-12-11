@@ -38,9 +38,7 @@ function main() {
         }
         if (value) {
             player.setPlaybackRate(value);
-            if (value > 2) {
-                video.playbackRate = value;
-            }
+            video.playbackRate = value;
         }
     });
 }
