@@ -1,20 +1,20 @@
 console.log('code in content.js');
 
-function insertPlaybackRate() {
-    console.log('insertPlaybackRate');
+function main() {
+    console.log('main');
     const logo = document.getElementById('logo-icon');
     const player = document.getElementById('movie_player');
     const video = document.querySelector('video');
     if (!logo) {
-        console.log('logo not found, insert playbackRate fail');
+        console.log('logo not found! Fail!');
         return;
     }
     if (!player) {
-        console.log('player not found, insert playbackRate fail');
+        console.log('player not found! Fail!');
         return;
     }
     if (!video) {
-        console.log('video not found, insert playbackRate fail');
+        console.log('video not found! Fail!');
         return;
     }
     const label = document.createElement('label');
@@ -47,7 +47,7 @@ function insertPlaybackRate() {
 
 function onDOMContentLoaded() {
     console.log('DOMContentLoaded');
-    setTimeout(insertPlaybackRate, 3000);
+    setTimeout(main, 3000);
 }
 
 document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
