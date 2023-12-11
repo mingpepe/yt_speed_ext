@@ -1,21 +1,21 @@
 console.log('code in content.js');
 
-function main() {
+function main(retryCnt) {
     console.log('main');
     const logo = document.getElementById('logo-icon');
     const player = document.getElementById('movie_player');
     const video = document.querySelector('video');
     if (!logo) {
         console.log('logo not found! Fail!');
-        return;
     }
     if (!player) {
         console.log('player not found! Fail!');
-        return;
     }
     if (!video) {
         console.log('video not found! Fail!');
-        return;
+    }
+    if (!logo || !player || !video && retryCnt > 0) {
+        setTimeout(main(retryCnt--), 1000);
     }
     const label = document.createElement('label');
     logo.appendChild(label);
@@ -41,11 +41,12 @@ function main() {
             video.playbackRate = value;
         }
     });
+    console.log('youtube speed controller installed successfully');
 }
 
 function onDOMContentLoaded() {
     console.log('DOMContentLoaded');
-    setTimeout(main, 3000);
+    setTimeout(() => main(5), 3000);
 }
 
 document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
