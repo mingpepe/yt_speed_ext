@@ -16,7 +16,7 @@ function main(retryCnt) {
     }
     if (!logo || !player || !video) {
         if (retryCnt > 0) {
-            setTimeout(main(--retryCnt), 1000);
+            setTimeout( () => main(--retryCnt), 1000);
         }
         return;
     }
