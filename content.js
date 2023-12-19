@@ -23,11 +23,11 @@ function main(retryCnt) {
     const label = document.createElement('label');
     logo.appendChild(label);
 
-    setInterval(() => {
-        label.textContent = video.playbackRate.toFixed(2);
-    }, 1000);
-
     document.addEventListener('keydown', (event) => {
+        if (event.key == '>' || event.key == '<') {
+            updatePlaybackRate();
+            return;
+        }
         const playbackRate = video.playbackRate;
         let value = null;
         if (event.key === 'w') {
@@ -42,9 +42,15 @@ function main(retryCnt) {
         if (value) {
             player.setPlaybackRate(value);
             video.playbackRate = value;
+            updatePlaybackRate();
         }
     });
+    updatePlaybackRate();
     console.log('youtube speed controller installed successfully');
+
+    function updatePlaybackRate() {
+        label.textContent = video.playbackRate.toFixed(2);
+    }
 }
 
 function onDOMContentLoaded() {
